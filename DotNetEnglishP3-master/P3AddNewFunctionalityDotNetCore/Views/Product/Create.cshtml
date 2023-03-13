@@ -8,7 +8,7 @@
 <form asp-action="Create" method="post">
     <div class="mb-3 col-6">
         <label>@Localizer["Name"]*:</label><input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-bg-danger">
+        <span asp-validation-for="Name" class="text-bg-danger"></span>
     </div>
     <div class="mb-3 col-4">
         <label>@Localizer["Price"]*:</label><input asp-for="Price" class="form-control" />
