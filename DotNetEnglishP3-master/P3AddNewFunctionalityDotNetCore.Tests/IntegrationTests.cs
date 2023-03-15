@@ -67,13 +67,10 @@ namespace P3AddNewFunctionalityDotNetCore.Tests
             var languageService = new LanguageService();
 
             ProductController productController = new ProductController(new ProductService(cart, productRepository, orderRepository, _localizer), languageService);
-
-            ProductService productService = new ProductService(null, productRepository, null, null);
+            ProductService productService = new ProductService(cart, productRepository, orderRepository, _localizer);
 
             var totalProduct = productService.GetAllProducts();
-
             var lastId = totalProduct.Max(p => p.Id);
-
             productController.DeleteProduct(lastId);
 
             // Assert
